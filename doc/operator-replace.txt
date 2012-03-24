@@ -1,6 +1,6 @@
 *operator-replace.txt*	Operator to replace text with register content
 
-Version 0.0.1
+Version 0.0.2
 Script ID: 2782
 Copyright (C) 2009 kana <http://whileimautomaton.net/>
 License: MIT license  {{{
@@ -116,6 +116,9 @@ BUGS						*operator-replace-bugs*
 
 ==============================================================================
 CHANGELOG					*operator-replace-changelog*
+
+0.0.2	2012-03-24T14:14:37+09:00	    *operator-replace-changelog-0.0.2*
+	- Refine the internal structure.
 
 0.0.1	2009-09-16T07:59:40+09:00	    *operator-replace-changelog-0.0.1*
 	- Fix edge case bugs.  Now replaacing at the end of line or the end of
