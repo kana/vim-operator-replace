@@ -117,6 +117,11 @@ BUGS						*operator-replace-bugs*
 ==============================================================================
 CHANGELOG					*operator-replace-changelog*
 
+0.0.3	2012-11-29T20:19:45+09:00	    *operator-replace-changelog-0.0.3*
+	- Fix to correctly handle empty region.  For example,
+	  |<Plug>(operator-replace)| with |it| on text such as "<div></div>"
+	  did not work correctly.
+
 0.0.2	2012-03-24T14:14:37+09:00	    *operator-replace-changelog-0.0.2*
 	- Refine the internal structure.
 
