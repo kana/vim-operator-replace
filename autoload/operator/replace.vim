@@ -38,7 +38,9 @@ function! operator#replace#do(motion_wise)  "{{{2
   \                  ? 'p'
   \                  : 'P')
 
-  execute 'normal!' '`['.visual_command.'`]"_d'
+  if !s:is_empty_region(getpos("'["), getpos("']"))
+    execute 'normal!' '`['.visual_command.'`]"_d'
+  end
   execute 'normal!' '"'.register.put_command
   return
 endfunction
@@ -76,6 +78,17 @@ endfunction
 
 
 
+
+
+
+
+function! s:is_empty_region(begin, end)  "{{{2
+  " Whenever 'operatorfunc' is called, '[ is always placed before '] even if
+  " a backward motion is given to g@.  But there is the only one exception.
+  " If an empty region is given to g@, '[ and '] are set to the same line, but
+  " '[ is placed after '].
+  return a:begin[1] == a:end[1] && a:end[2] < a:begin[2]
+endfunction
 
 
 

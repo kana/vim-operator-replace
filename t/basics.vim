@@ -184,3 +184,36 @@ describe '<Plug>(operator-replace) with line {motion}'
     Expect [getreg('s'), getregtype('s')] ==# ["waldo\n", 'V']
   end
 end
+
+
+
+
+describe '<Plug>(operator-replace) with empty region'
+  before
+    tabnew
+  end
+
+  after
+    tabclose!
+  end
+
+  it 'replaces a given empty region with a register content'
+    let @" = 'foo'
+
+    normal! o<div>---</div>
+    execute 'normal' "\<Plug>(operator-replace)it"
+    Expect getline('.') ==# '<div>foo</div>'
+
+    normal! o<div>-</div>
+    execute 'normal' "\<Plug>(operator-replace)it"
+    Expect getline('.') ==# '<div>foo</div>'
+
+    normal! o<div></div>
+    execute 'normal' "\<Plug>(operator-replace)it"
+    Expect getline('.') ==# '<div>foo</div>'
+
+    normal! o<div>xyz</div>
+    execute 'normal' "0fz\<Plug>(operator-replace)Fx"
+    Expect getline('.') ==# '<div>fooz</div>'
+  end
+end
