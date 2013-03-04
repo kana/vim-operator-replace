@@ -23,6 +23,8 @@
 " }}}
 " Interface  "{{{1
 function! operator#replace#do(motion_wise)  "{{{2
+  let sel_save = &l:selection
+  let &l:selection = "inclusive"
   let visual_command = s:visual_command_from_wise_name(a:motion_wise)
     " v:register will be overwritten by "_d, so that the current value of
     " v:register must be saved before deletion.  Without saving, it's not
@@ -42,6 +44,7 @@ function! operator#replace#do(motion_wise)  "{{{2
     execute 'normal!' '`['.visual_command.'`]"_d'
   end
   execute 'normal!' '"'.register.put_command
+  let &l:selection = sel_save
   return
 endfunction
 
