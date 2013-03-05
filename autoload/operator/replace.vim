@@ -1,5 +1,5 @@
 " operator-replace - Operator to replace text with register content
-" Version: 0.0.3
+" Version: 0.0.4
 " Copyright (C) 2009-2013 Kana Natsuno <http://whileimautomaton.net/>
 " License: So-called MIT/X license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
