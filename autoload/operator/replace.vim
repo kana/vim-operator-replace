@@ -39,7 +39,10 @@ function! operator#replace#do(motion_wise)  "{{{2
   \                  : 'P')
 
   if !s:is_empty_region(getpos("'["), getpos("']"))
+    let original_selection = &g:selection
+    let &g:selection = 'inclusive'
     execute 'normal!' '`['.visual_command.'`]"_d'
+    let &g:selection = original_selection
   end
   execute 'normal!' '"'.register.put_command
   return
