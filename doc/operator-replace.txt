@@ -1,9 +1,9 @@
 *operator-replace.txt*	Operator to replace text with register content
 
-Version 0.0.3
+Version 0.0.4
 Script ID: 2782
-Copyright (C) 2009-2012 Kana Natsuno <http://whileimautomaton.net/>
-License: So-called MIT/X license  {{{
+Copyright (C) 2009-2013 Kana Natsuno <http://whileimautomaton.net/>
+License: MIT license  {{{
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
     "Software"), to deal in the Software without restriction, including
@@ -116,6 +116,10 @@ BUGS						*operator-replace-bugs*
 
 ==============================================================================
 CHANGELOG					*operator-replace-changelog*
+
+0.0.4	2013-03-05T22:30:01+09:00	    *operator-replace-changelog-0.0.4*
+	- Fix to delete a proper range of text for environments which
+	  'selection' is set to "exclusive".
 
 0.0.3	2012-11-29T20:19:45+09:00	    *operator-replace-changelog-0.0.3*
 	- Fix to correctly handle empty region.  For example,
