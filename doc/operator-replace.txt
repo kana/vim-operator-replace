@@ -115,6 +115,12 @@ BUGS						*operator-replace-bugs*
 ==============================================================================
 CHANGELOG					*operator-replace-changelog*
 
+0.0.5	2015-02-25T00:48:14+09:00	    *operator-replace-changelog-0.0.5*
+	- Fix a bug that any register given to |<Plug>(operator-replace)| is
+	  ignored if the operator is combined with any custom text object
+	  defined by |textobj-user|.
+	- |operator-user| 0.1.0 or later is now required.
+
 0.0.4	2013-03-05T22:30:01+09:00	    *operator-replace-changelog-0.0.4*
 	- Fix to delete a proper range of text for environments which
 	  'selection' is set to "exclusive".
