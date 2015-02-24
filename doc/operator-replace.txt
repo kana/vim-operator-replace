@@ -1,8 +1,8 @@
 *operator-replace.txt*	Operator to replace text with register content
 
-Version 0.0.4
+Version 0.0.5
 Script ID: 2782
-Copyright (C) 2009-2013 Kana Natsuno <http://whileimautomaton.net/>
+Copyright (C) 2009-2015 Kana Natsuno <http://whileimautomaton.net/>
 License: MIT license  {{{
     Permission is hereby granted, free of charge, to any person obtaining
     a copy of this software and associated documentation files (the
@@ -46,13 +46,11 @@ operations such as "d{motion}P" and "c{motion}<C-r>{register}".
 
 Requirements:
 - Vim 7.2 or later
-- |operator-user| 0.0.5 or later (vimscript#2692)
+- |operator-user| 0.1.0 or later
+  https://github.com/kana/vim-operator-user
 
 Latest version:
-http://github.com/kana/config/commits/vim-operator-replace
-
-Document in HTML format:
-http://kana.github.com/config/vim/operator-replace.html
+https://github.com/kana/vim-operator-replace
 
 
 
@@ -116,6 +114,12 @@ BUGS						*operator-replace-bugs*
 
 ==============================================================================
 CHANGELOG					*operator-replace-changelog*
+
+0.0.5	2015-02-25T00:48:14+09:00	    *operator-replace-changelog-0.0.5*
+	- Fix a bug that any register given to |<Plug>(operator-replace)| is
+	  ignored if the operator is combined with any custom text object
+	  defined by |textobj-user|.
+	- |operator-user| 0.1.0 or later is now required.
 
 0.0.4	2013-03-05T22:30:01+09:00	    *operator-replace-changelog-0.0.4*
 	- Fix to delete a proper range of text for environments which
