@@ -50,7 +50,7 @@ Requirements:
   https://github.com/kana/vim-operator-user
 
 Latest version:
-http://github.com/kana/config/commits/vim-operator-replace
+https://github.com/kana/vim-operator-replace
 
 Document in HTML format:
 http://kana.github.com/config/vim/operator-replace.html
