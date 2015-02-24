@@ -46,7 +46,8 @@ operations such as "d{motion}P" and "c{motion}<C-r>{register}".
 
 Requirements:
 - Vim 7.2 or later
-- |operator-user| 0.0.5 or later (vimscript#2692)
+- |operator-user| 0.1.0 or later
+  https://github.com/kana/vim-operator-user
 
 Latest version:
 http://github.com/kana/config/commits/vim-operator-replace
