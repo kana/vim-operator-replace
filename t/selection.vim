@@ -4,7 +4,7 @@ describe '<Plug>(operator-replace)'
   before
     new
 
-    function! b:go(selection)
+    function! b:.go(selection)
       let original_selection = &g:selection
       let &g:selection = a:selection
 
@@ -22,10 +22,10 @@ describe '<Plug>(operator-replace)'
   end
 
   it 'works properly with &selection == "inclusive"'
-    call b:go('inclusive')
+    call b:.go('inclusive')
   end
 
   it 'works properly with &selection == "exclusive"'
-    call b:go('exclusive')
+    call b:.go('exclusive')
   end
 end

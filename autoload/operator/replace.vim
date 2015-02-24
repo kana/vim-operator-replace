@@ -24,10 +24,6 @@
 " Interface  "{{{1
 function! operator#replace#do(motion_wise)  "{{{2
   let visual_command = s:visual_command_from_wise_name(a:motion_wise)
-    " v:register will be overwritten by "_d, so that the current value of
-    " v:register must be saved before deletion.  Without saving, it's not
-    " possible to what "{register} user gives.
-  let register = v:register != '' ? v:register : '"'
 
   let put_command = (s:deletion_moves_the_cursor_p(
   \                    a:motion_wise,
@@ -44,7 +40,7 @@ function! operator#replace#do(motion_wise)  "{{{2
     execute 'normal!' '`['.visual_command.'`]"_d'
     let &g:selection = original_selection
   end
-  execute 'normal!' '"'.register.put_command
+  execute 'normal!' '"'.operator#user#register().put_command
   return
 endfunction
 
