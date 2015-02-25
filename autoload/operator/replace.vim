@@ -38,6 +38,14 @@ function! operator#replace#do(motion_wise)  "{{{2
     let original_selection = &g:selection
     let &g:selection = 'inclusive'
     execute 'normal!' '`['.visual_command.'`]"_d'
+
+    " Work around
+    " When regtype is linewise and text object is entire buffer, remove
+    " blank line after pasting
+    if getregtype(register) ==# 'V' && getline(1, '$') == ['']
+        let put_command .= '`[k"_dd'
+    endif
+
     let &g:selection = original_selection
   end
   execute 'normal!' '"'.operator#user#register().put_command
