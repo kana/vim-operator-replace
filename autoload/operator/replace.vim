@@ -34,6 +34,8 @@ function! operator#replace#do(motion_wise)  "{{{2
   \                  ? 'p'
   \                  : 'P')
 
+  let original_virtualedit = &g:virtualedit
+  let &g:virtualedit = ''
   if !s:is_empty_region(getpos("'["), getpos("']"))
     let original_selection = &g:selection
     let &g:selection = 'inclusive'
@@ -41,6 +43,7 @@ function! operator#replace#do(motion_wise)  "{{{2
     let &g:selection = original_selection
   end
   execute 'normal!' '"'.operator#user#register().put_command
+  let &g:virtualedit = original_virtualedit
   return
 endfunction
 
